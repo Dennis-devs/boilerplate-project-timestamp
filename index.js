@@ -26,7 +26,7 @@ app.get("/api/:date?", function (req, res){
   res.json({"unix": String})
 })*/
 
-app.get("/api/:date?", function (req, res){
+app.get("/api/:date", function (req, res){
   let date = req.params.date;
   let unix = 0;
   let utc = "";
@@ -47,11 +47,11 @@ app.get("/api/:date?", function (req, res){
   }
 });
 
-/*app.get("/api", (req, res) =>{
+app.get("/api", (req, res) =>{
   unix = new Date().getTime();
   utc = new Date().toUTCString();
   res.json({"unix": unix, "utc": utc});
-})*/
+})
 
 /*app.get("/api/:date?", (req, res) => {
     if (!req.params.date) {
